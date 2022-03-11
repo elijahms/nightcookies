@@ -36,15 +36,15 @@ code {
 
 a:link {
   text-decoration: none;
-  /* color: black; */
+  color: pink;
 }
 a:visited {
   text-decoration: none;
-  /* color: black; */
+  color: #61C7C3;
 }
 a:hover {
   text-decoration: none;
-  /* color: black; */
+  color:  #f0e20d;
 }
 a:active {
   text-decoration: none;
@@ -108,7 +108,6 @@ a:active {
   margin: auto;
 }
 
-
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -120,7 +119,7 @@ a:active {
 
 .rotate {
   animation: rotation 4s infinite linear;
-  max-width: 100%;
+  max-width: 90%;
   /* opacity: 0.85; */
   border-radius: 25px;
   margin: auto;
@@ -128,58 +127,156 @@ a:active {
 
 .feed-img {
   max-width: 450px;
-  border-radius: 25px;
+  max-height: 100%;
+  border-radius: 20px;
 }
 
 #arrowAnim {
-  width: 100vw;
-  height: 15vh;
+  width: 20vw;
+  height: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .arrow {
-  width: 5vw;
-  height: 5vw;
-  border: 1.5vw solid;
-  border-color: #F0E20D transparent transparent #F0E20D;
+  width: 50px;
+  height: 50px;
+  border: 15px solid;
+  border-color: #f0e20d transparent transparent #f0e20d;
   transform: rotate(-225deg);
 }
 
-
 .arrowSliding {
   position: absolute;
-  -webkit-animation: slide 4s linear infinite; 
-          animation: slide 4s linear infinite;
+  -webkit-animation: slide 4s linear infinite;
+  animation: slide 4s linear infinite;
 }
 
 .delay1 {
-  -webkit-animation-delay: 1s; 
-    animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 .delay2 {
-  -webkit-animation-delay: 2s; 
-    animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
 }
 .delay3 {
-  -webkit-animation-delay: 3s; 
-    animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes slide {
-    0% { opacity:0; transform: translateX(21vw); }	
-   20% { opacity:1; transform: translateX(15vw); }	
-   80% { opacity:1; transform: translateX(-15vw); }	
-  100% { opacity:0; transform: translateX(-21vw); }	
+  0% {
+    opacity: 0;
+    transform: translateX(21vw);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(15vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-15vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-21vw);
+  }
 }
 @keyframes slide {
-    0% { opacity:0; transform: translateX(21vw); }	
-   20% { opacity:1; transform: translateX(15vw); }	
-   80% { opacity:1; transform: translateX(-15vw); }	
-  100% { opacity:0; transform: translateX(-21vw); }	
+  0% {
+    opacity: 0;
+    transform: translateX(21vw);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(15vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-15vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-21vw);
+  }
 }
 
+/* Dropdown Button */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: pink;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  color: #68c06d;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #68C06D;} */
 
 
+#flyoutMenu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #D566A6;
+  opacity: 0.95;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.9s
+              cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+ 
+#flyoutMenu.hide {
+  transform: translate3d(-100vw, 0, 0);
+    animation: fadeOut 0.5s linear
 
+}
+ 
+#flyoutMenu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+  animation: fadeIn 0.5s linear
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes fadeOut {
+  110% {opacity:1;}
+  0% {opacity:0;}
+}

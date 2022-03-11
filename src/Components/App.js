@@ -3,8 +3,7 @@ import HomePage from "./HomePage";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
-const PINK = "#D566A6"
+import {useState } from "react"
 
 function App() {
 
@@ -29,14 +28,14 @@ function App() {
       },
     },
     typography: {
-      fontFamily: "Futura, Raleway",
+      fontFamily: "FuturaBold, Raleway",
     },
   });
-
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <Routes>
         <Route exact path="/" element={<HomePage />} />
       </Routes>

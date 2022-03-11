@@ -1,13 +1,15 @@
 import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Logo from "../assets/ncLogo.png"
-import { TextField } from "@mui/material";
+import Logo from "../assets/ncLogo.png";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import { contactLinks } from "../assets/conts";
 
 const Footer = () => {
   return (
-    <div className="footer" style={{maxWidth: '100vw'}}>
+    <Container>
       <Grid
         container
         direction="row"
@@ -15,7 +17,7 @@ const Footer = () => {
         alignItems="center"
         sx={{ p: 2 }}
       >
-        <Grid lg={4} sm={12}>
+        <Grid item lg={4} sm={12}>
           <Box
             sx={{
               width: "100%",
@@ -33,28 +35,30 @@ const Footer = () => {
               sx={{ width: "70%", marginLeft: "15%" }}
               id="outlined-basic"
               label="email address"
-              autocomplete="email"
+              name="email"
+              autoComplete="on"
+              type="email"
               variant="outlined"
             />
           </Box>
         </Grid>
-        <Grid lg={4}>
+        <Grid item lg={4} sm={12}>
           <Box
             sx={{
               justifyContent: "center",
-              display: 'flex',
+              display: "flex",
               pt: 5,
-              pb: 5
+              pb: 5,
             }}
           >
             <img src={Logo} alt="logo" className="footer-logo"></img>
           </Box>
         </Grid>
-        <Grid lg={4} sm={12}>
+        <Grid item lg={4} sm={12}>
           <Box>
             <Typography
               variant="h5"
-              align="center"
+              align="left"
               sx={{
                 color: "text.primary",
                 pb: 2,
@@ -63,14 +67,15 @@ const Footer = () => {
                 whiteSpace: "pre-line",
               }}
             >
-              {
-                "KvK: 81938616 \n BTW nr: NL003620966B81 \n Tel: 06 13 56 69 11 \n e-mail: sweetness@nightcookies.nl"
-              }
+              {"KvK:"} {"81938616"} {"\n BTW nr:"} {"NL003620966B81 \n Tel:"}{" "}
+              {<Link href={contactLinks.phone}>{contactLinks.phone}</Link>}{" "}
+              {"\n e-mail: "}
+              {<Link href={contactLinks.email}>{contactLinks.email}</Link>}
             </Typography>
           </Box>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 };
 

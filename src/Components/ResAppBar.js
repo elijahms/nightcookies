@@ -1,34 +1,17 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import NightCookiesLogo from "../assets/ncLogo.png";
 import Link from "@mui/material/Link";
-import { Modal } from "@mui/material";
+import { contactLinks } from "../assets/conts";
+import { Fade as Hamburger } from "hamburger-react";
 
-const pages = ["Order Cookies", "Press"];
-
-const ResponsiveAppBar = () => {
-
-const [hamburger, setHamburger] = useState(false)
-const [menu, setMenu] = useState(true)
-
-const OpenMenu = () => {
-  setHamburger(() => !hamburger);
-  setMenu(() => !menu)
-}
-
+const ResponsiveAppBar = ({ isOpen, setOpen }) => {
 
   return (
     <>
@@ -46,23 +29,12 @@ const OpenMenu = () => {
                 alignItems: "center",
               }}
             >
-              {/* <IconButton size="large" edge="end" color="inherit"> */}
-              {/* <MenuIcon sx={{ fontSize: 45, color: "#61C7C3" }} /> */}
-              {/* <Hamburder /> */}
-              <div
-                onClick={OpenMenu}
-                className={
-                  hamburger
-                    ? "hamburger hamburger--collapse is-active"
-                    : "hamburger hamburger--collapse"
-                }
-                type="button"
-              >
-                <div className="hamburger-box">
-                  <div className="hamburger-inner"></div>
-                </div>
-              </div>
-              {/* </IconButton> */}
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                rounded
+                color="#4FD1C5"
+              />
             </Box>
             <Box
               sx={{
@@ -72,29 +44,73 @@ const OpenMenu = () => {
                 // border: "2px solid red",
               }}
             >
-              {pages.map((page) => (
-                <Link
-                  key={page}
+              <div className="dropdown">
+                <Button
+                  className="dropbtn"
                   sx={{
-                    // border: "2px solid green",
                     textAlign: "center",
                     fontFamily: "FuturaBold",
-                    // fontWeight: 'bold',
-                    fontSize: "2rem",
+                    fontSize: "2.5rem",
                     justifyContent: "center",
                     alignItems: "center",
-                    pt: 1.7,
-                    // my: 1,
                     color: "white",
-                    pl: 5,
+                    pl: 8,
                   }}
                 >
-                  {page}
-                </Link>
-              ))}
+                  Order Now
+                </Button>
+                <div className="dropdown-content">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={contactLinks.uber}
+                  >
+                    Uber
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={contactLinks.deliveroo}
+                  >
+                    Deliveroo
+                  </a>
+                </div>
+              </div>
+              <div className="dropdown">
+                <Button
+                  className="dropbtn"
+                  sx={{
+                    textAlign: "center",
+                    fontFamily: "FuturaBold",
+                    fontSize: "2.5rem",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "white",
+                    pl: 8,
+                  }}
+                >
+                  Press
+                </Button>
+                <div className="dropdown-content">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={contactLinks.press.hetparool}
+                  >
+                    HETPAROOL
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={contactLinks.press.dewestkrant}
+                  >
+                    DE WESTKRANT
+                  </a>
+                </div>
+              </div>
               <Link
-                sx={{ pl: 5,}}
-                href="https://elijahsilverman.com/"
+                sx={{ pl: 5 }}
+                href={contactLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
               >
