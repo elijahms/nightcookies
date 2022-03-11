@@ -6,8 +6,32 @@ import Logo from "../assets/ncLogo.png";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import { contactLinks } from "../assets/conts";
+import { useState } from "react";
 
 const Footer = () => {
+  const [userEmail, setUserEmail] = useState("");
+
+  function fillEmail(e) {
+    setUserEmail(e.target.value);
+  }
+
+  function submitEmail() {
+    console.log(userEmail);
+    fetch("https://mailthis.to/elijahmsilverman@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify([userEmail]),
+    }).then((r) => r.json()).then((d) => console.log(d))
+  }
+
+  function handleSubmit(e) {
+    if (e.keyCode === 13) {
+      submitEmail();
+    }
+  }
+
   return (
     <Container>
       <Grid
@@ -36,9 +60,12 @@ const Footer = () => {
               id="outlined-basic"
               label="email address"
               name="email"
+              value={userEmail}
               autoComplete="on"
               type="email"
               variant="outlined"
+              onChange={fillEmail}
+              onKeyUp={handleSubmit}
             />
           </Box>
         </Grid>

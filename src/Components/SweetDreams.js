@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MandM from "../assets/M&M.png";
 import uber from "../assets/ubereats.png";
+import Deliveroo from "../assets/deliveroo.png"
 import Typewriter from "typewriter-effect";
 import { contactLinks } from "../assets/conts";
 import { new_kid, alert_msg, sweet_dream } from "../assets/conts";
@@ -84,7 +85,7 @@ const SweetDreams = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://play-lh.googleusercontent.com/vIL5SVs5s307EmCUZ6rWx11YvcoRnk0sMfGB1VCMBD3m78PMGGsZG_3VIwOZoI4TSQ"
+                  src={Deliveroo}
                   style={{
                     maxWidth: "80px",
                     borderRadius: "25px",

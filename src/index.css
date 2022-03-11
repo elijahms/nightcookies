@@ -169,37 +169,37 @@ a:active {
 @-webkit-keyframes slide {
   0% {
     opacity: 0;
-    transform: translateX(21vw);
+    transform: translateX(-21vw);
   }
   20% {
     opacity: 1;
-    transform: translateX(15vw);
+    transform: translateX(-15vw);
   }
   80% {
     opacity: 1;
-    transform: translateX(-15vw);
+    transform: translateX(15vw);
   }
   100% {
     opacity: 0;
-    transform: translateX(-21vw);
+    transform: translateX(21vw);
   }
 }
 @keyframes slide {
   0% {
     opacity: 0;
-    transform: translateX(21vw);
+    transform: translateX(-21vw);
   }
   20% {
     opacity: 1;
-    transform: translateX(15vw);
+    transform: translateX(-15vw);
   }
   80% {
     opacity: 1;
-    transform: translateX(-15vw);
+    transform: translateX(15vw);
   }
   100% {
     opacity: 0;
-    transform: translateX(-21vw);
+    transform: translateX(21vw);
   }
 }
 
@@ -233,7 +233,7 @@ a:active {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  color: #68c06d;
+  color: #61C7C3;
 }
 
 /* Show the dropdown menu on hover */
@@ -253,22 +253,24 @@ a:active {
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform 0.9s
-              cubic-bezier(0, .52, 0, 1);
+  /* transition: transform 0.6s
+              cubic-bezier(0, .52, 0, 1); */
   overflow: scroll;
   z-index: 1000;
 }
  
 #flyoutMenu.hide {
-  transform: translate3d(-100vw, 0, 0);
-    animation: fadeOut 0.5s linear
+  height: 0;
+  /* transform: translate3d(-100vw, 0, 0); */
+  animation: fadeOut 0.1s linear
 
 }
  
 #flyoutMenu.show {
-  transform: translate3d(0vw, 0, 0);
+  /* transform: translate3d(0vw, 0, 0); */
+  height: 100vh;
   overflow: hidden;
-  animation: fadeIn 0.5s linear
+  animation: fadeIn 0.3s ease-in
 }
 
 @keyframes fadeIn {
@@ -277,6 +279,7 @@ a:active {
 }
 
 @keyframes fadeOut {
-  110% {opacity:1;}
+  100% {opacity:1;}
   0% {opacity:0;}
 }
+

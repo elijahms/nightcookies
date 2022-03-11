@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import NightCookiesLogo from "../assets/ncLogo.png";
 import Link from "@mui/material/Link";
 import { contactLinks } from "../assets/conts";
