@@ -2,7 +2,7 @@ export const new_kid =
   "The new kid in town! Order warm gooey goodness with Uber Eats!";
 export const alert_msg =
   "We are currently looking for a new location and are temporarily closed. Follow us on Instagram to stay up-to-date.";
-export const sweet_dream = "Sweet Dreams Are Made of";
+export const sweet_dream = "Sweet Dreams are made of:";
 export const contactLinks = {
   email: "sweetness@nightcookies.nl",
   phone: "06 13 56 69 11",

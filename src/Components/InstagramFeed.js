@@ -23,7 +23,7 @@ const InstagramFeed = () => {
     <div
       style={{
         backgroundColor: "#D566A6",
-        minHeight: "78vh",
+        // minHeight: "78vh",
         maxWidth: "100vw",
       }}
     >
@@ -69,6 +69,7 @@ const InstagramFeed = () => {
             pb: 5,
             pt: 5,
             pl: 1,
+            // minHeight: '120%'
           }}
         >
           {imageList.map((image) => {
@@ -76,7 +77,11 @@ const InstagramFeed = () => {
               <Paper
                 key={image}
                 elevation={6}
-                sx={{ borderRadius: "25px", p: 0, backgroundColor: "#D566A6" }}
+                sx={{
+                  borderRadius: "25px",
+                  p: 0,
+                  backgroundColor: "#D566A6",
+                }}
               >
                 <img
                   loading="lazy"

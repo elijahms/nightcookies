@@ -5,6 +5,7 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import { Fade as Hamburger } from "hamburger-react";
 import { contactLinks } from "../assets/conts";
+import {DeliveryLinks, ExternalLinks} from "./ExternalLinks"
 
 const Modal = ({ isOpen, setOpen }) => {
   const [pressTog, setPressTog] = useState(false);
@@ -46,20 +47,7 @@ const Modal = ({ isOpen, setOpen }) => {
                 fontSize: "1.5rem",
               }}
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={contactLinks.uber}
-              >
-                Uber
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={contactLinks.deliveroo}
-              >
-                Deliveroo
-              </a>
+              <DeliveryLinks />
             </Stack>
           </Box>
           <Button
@@ -84,20 +72,7 @@ const Modal = ({ isOpen, setOpen }) => {
                 fontSize: "1.5rem",
               }}
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={contactLinks.press.hetparool}
-              >
-                Hetparool
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={contactLinks.press.dewestkrant}
-              >
-                De Westkrant
-              </a>
+              <ExternalLinks />
             </Stack>
           </Box>
           <Box>

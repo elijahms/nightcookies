@@ -4,15 +4,13 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MandM from "../assets/M&M.png";
 import uber from "../assets/ubereats.png";
-import Deliveroo from "../assets/deliveroo.png"
+import Deliveroo from "../assets/deliveroo.png";
 import Typewriter from "typewriter-effect";
 import { contactLinks } from "../assets/conts";
 import { new_kid, alert_msg, sweet_dream } from "../assets/conts";
 
-
 const SweetDreams = () => {
-  let typewriterS = ["chocolate", "reese", "m&ms", "kinder", "nutella"];
-  // let screenSize = window.innerWidth;
+  let typewriterS = ["Chocolate", "Reese", "M&Ms", "Kinder", "Nutella"];
   return (
     <>
       <Container>
@@ -26,28 +24,33 @@ const SweetDreams = () => {
           }}
         >
           <Grid item xs={12} md={6} sx={{ mt: 4, mb: 4 }}>
-            <Typography
-              variant="h3"
-              align="left"
-              sx={{
-                color: "text.pink",
-                fontFamily: "FuturaBold",
-                display: "inline-flex",
-                pb: 2,
-                float: "left",
-              }}
-            >
-              {sweet_dream}
-              {/* <Typewriter
-                options={{
-                  strings: typewriterS,
-                  autoStart: true,
-                  delay: 90,
-                  cursor: "|",
-                  loop: true,
+            <div className="main-text">
+              <Typography
+                variant="h3"
+                align="left"
+                sx={{
+                  color: "text.pink",
+                  fontFamily: "FuturaBold",
+                  // display: "inline-flex",
+                  pb: 4,
+                  // float: "left",
                 }}
-              /> */}
-            </Typography>
+              >
+                {sweet_dream}{" "}
+                <span>
+                  {" "}
+                  <Typewriter
+                    options={{
+                      strings: typewriterS,
+                      autoStart: true,
+                      delay: 90,
+                      cursor: "|",
+                      loop: true,
+                    }}
+                  />
+                </span>
+              </Typography>
+            </div>
             <Typography
               variant="h5"
               align="justify"

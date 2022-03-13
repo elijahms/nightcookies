@@ -9,9 +9,9 @@ import NightCookiesLogo from "../assets/ncLogo.png";
 import Link from "@mui/material/Link";
 import { contactLinks } from "../assets/conts";
 import { Fade as Hamburger } from "hamburger-react";
+import { DeliveryLinks, ExternalLinks } from "./ExternalLinks";
 
 const ResponsiveAppBar = ({ isOpen, setOpen }) => {
-
   return (
     <>
       <AppBar position="static">
@@ -59,20 +59,7 @@ const ResponsiveAppBar = ({ isOpen, setOpen }) => {
                   Order Now
                 </Button>
                 <div className="dropdown-content">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={contactLinks.uber}
-                  >
-                    Uber
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={contactLinks.deliveroo}
-                  >
-                    Deliveroo
-                  </a>
+                  <DeliveryLinks />
                 </div>
               </div>
               <div className="dropdown">
@@ -91,20 +78,7 @@ const ResponsiveAppBar = ({ isOpen, setOpen }) => {
                   Press
                 </Button>
                 <div className="dropdown-content">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={contactLinks.press.hetparool}
-                  >
-                    HETPAROOL
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={contactLinks.press.dewestkrant}
-                  >
-                    DE WESTKRANT
-                  </a>
+                  <ExternalLinks />
                 </div>
               </div>
               <Link
